@@ -1,0 +1,69 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      *,
+      *::after,
+      *::before {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .d-ib {
+        display: inline-block;
+      }
+      .main {
+        height: 600px;
+        width: 600px;
+        /* position: absolute; */
+      }
+      .x0y0 {
+        /* left: 0;
+        top: 0; */
+        top: 10px;
+        z-index: 1001;
+        background-color: red;
+      }
+      .x0y100 {
+        /* left: 0;
+        bottom: 0; */
+        top: 20px;
+        background-color: yellow;
+      }
+      .x100y0 {
+        /* right: 0;
+        top: 0; */
+        top: 30px;
+        background-color: blue;
+      }
+      .x100y100 {
+        /* right: 0;
+        bottom: 0; */
+        top: 40px;
+        background-color: purple;
+      }
+    </style>
+  </head>
+  <body>
+    <header
+      style="
+        position: fixed;
+        width: 100%;
+        z-index: 2;
+        top: 0;
+        background: black;
+        color: white;
+      "
+    >
+      Header
+    </header>
+    <div class="d-ib main x0y0">0,0</div>
+    <div class="d-ib main x100y100">100,100</div>
+    <div class="d-ib main x0y100">0,100</div>
+    <div class="d-ib main x100y0">100,0</div>
+    <!-- <div class="d-ib">Another div</div> -->
+  </body>
+</html>

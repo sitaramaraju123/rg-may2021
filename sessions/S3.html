@@ -1,0 +1,173 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .parent {
+        margin: 10px auto;
+        height: 600px;
+        width: 600px;
+        /* display: grid; */
+        /* background-color: gray;*/
+        background-image: url(https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png);
+        background-repeat: no-repeat;
+        background-clip: text;
+
+        /* animation-timing-function: ; */
+        /* background-size: 600px; */
+
+        /* background: gray url(https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png) repeat-y; */
+        /* grid-template:
+          "b1 b2"
+          "b1"
+          "b1 b0"; */
+
+        /* place-items: center; */
+
+        /*
+block
+inline
+
+inline-block
+
+none
+
+table
+table-cell
+table-row
+
+flex - 1D (row OR col) one at a time
+
+grid - 2D (row AND col) at same time
+*/
+
+        /* flex-direction: row-reverse;
+        flex-wrap: wrap; */
+
+        /* flex-flow: column wrap; */
+
+        /* main-axis */
+        /* justify-content: space-between; */
+
+        /* cross-axis */
+        /* align-items: flex-end; */
+        /* gap: 10px; */
+      }
+
+      .box {
+        margin: 0;
+        padding: 0;
+        background-color: green;
+
+        /* content-height + padding(top-bottom) + border (top-bottom)*/
+        height: 150px;
+
+        /* content-box ==> content-width */
+        /* border-box ==> content-width + padding(left-right) + border (left-right)*/
+        width: 150px;
+        padding: 20px;
+        /* border: 10px solid red; */
+        /* 100% */
+      }
+
+      .b0 {
+        grid-area: b0;
+      }
+      .b1 {
+        grid-area: b1;
+        height: 500px;
+      }
+      .b2 {
+        grid-area: b2;
+      }
+
+      /* .wrapper,
+      .inner-inner,
+      .inner {
+        display: flex;
+        gap: 10px;
+      }
+
+      .inner {
+        flex-direction: row;
+      }
+      .wrapper,
+      .inner-inner {
+        flex-direction: column;
+      }
+
+      .main-head,
+      .main-footer {
+        width: 100%;
+        height: 50px;
+      }
+      .main-nav,
+      .content,
+      .inner-inner {
+        height: 100%;
+      }
+      .main-nav {
+        width: 10%;
+      }
+      .content {
+        width: 80%;
+      }
+      .inner-inner {
+        width: 10%;
+      }
+
+      .side,
+      .ad {
+        width: 100%;
+        height: 50%;
+      } */
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      This is a very cool effect
+      <!-- <div class="box b0">1</div>
+      <div class="box b1">2</div>
+      <div class="box b2">3</div>
+
+    <div class="box b0">1</div>
+      <div class="box b1">2</div>
+      <div class="box b2">3</div> -->
+    </div>
+
+    <!-- <div class="wrapper">
+      <header class="main-head">The header</header>
+      <div class="inner">
+        <nav class="main-nav">
+          <ul>
+            <li><a href="">Nav 1</a></li>
+            <li><a href="">Nav 2</a></li>
+            <li><a href="">Nav 3</a></li>
+          </ul>
+        </nav>
+        <article class="content">
+          <h1>Main article area</h1>
+          <p>
+            In this layout, we display the areas in source order for any screen
+            less that 500 pixels wide. We go to a two column layout, and then to
+            a three column layout by redefining the grid, and the placement of
+            items on the grid.
+          </p>
+        </article>
+        <div class="inner-inner">
+          <aside class="side">Sidebar</aside>
+          <div class="ad">Advertising</div>
+        </div>
+      </div>
+      <footer class="main-footer">The footer</footer> -->
+    </div>
+  </body>
+</html>

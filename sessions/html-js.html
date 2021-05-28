@@ -1,0 +1,90 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      *,
+      *::after,
+      *::before {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        width: 100vw;
+        height: 100vh;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .form-login {
+        padding: 16px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+      }
+
+      .form-row {
+        margin: 8px auto;
+      }
+
+      .form-btn {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <form class="form-login">
+      <div class="form-row">
+        <label for="username">Username: </label>
+        <input type="text" id="username" class="form-field username" />
+      </div>
+      <div class="form-row">
+        <label for="password">Password: </label>
+        <input type="password" id="password" class="form-field password" />
+      </div>
+      <div class="form-row">
+        <input type="submit" class="form-btn submit" />
+      </div>
+    </form>
+    <script>
+      const API_CLIENT = {
+        doLogin(user) {
+          console.log("User logged in successfully... ", user);
+        },
+      };
+      const body = document.querySelector("body");
+      const userElm = document.querySelector(".username");
+      const pswdElm = document.querySelector(".password");
+
+      const formLogin = document.querySelector(".form-login");
+
+      const btn = document.querySelector(".form-btn.submit");
+
+      const onSubmit = (e) => {
+        API_CLIENT.doLogin({
+          username: username.value,
+          password: password.value,
+        });
+      };
+
+      const onChange = (e) => {
+        if (/^[a-zA-Z0-9]+$/.test(e.target.value)) {
+          console.log("onChange =-----> ", e.target.value);
+        }
+      };
+
+      // bubble - pre/stop - -1, -2, -3(10)- 100%
+
+      btn.addEventListener("click", onSubmit);
+      formLogin.addEventListener("input", onChange);
+      // userElm.addEventListener("input", onChange);
+      // pswdElm.addEventListener("input", onChange);
+      // formLogin.addEventListener("click", onSubmit);
+      // body.addEventListener("click", onSubmit);
+    </script>
+  </body>
+</html>
