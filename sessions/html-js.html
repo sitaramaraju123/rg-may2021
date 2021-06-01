@@ -19,6 +19,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
+        gap: 10px;
       }
 
       .form-login {
@@ -34,57 +36,66 @@
       .form-btn {
         width: 100%;
       }
+
+      .row {
+        min-height: 40px;
+        width: 100%;
+        background-color: coral;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        gap: 10px;
+      }
+
+      .col {
+        width: 100px;
+        height: 100px;
+        border: 1px solid yellow;
+      }
     </style>
   </head>
   <body>
-    <form class="form-login">
-      <div class="form-row">
-        <label for="username">Username: </label>
-        <input type="text" id="username" class="form-field username" />
-      </div>
-      <div class="form-row">
-        <label for="password">Password: </label>
-        <input type="password" id="password" class="form-field password" />
-      </div>
-      <div class="form-row">
-        <input type="submit" class="form-btn submit" />
-      </div>
-    </form>
+    <div class="row row-1">Row</div>
+    <div class="row row-2">
+      <div class="col col-1">1</div>
+      <div class="col col-2">2</div>
+    </div>
+    <div class="row row-3">
+      <div class="col col-1">1</div>
+      <div class="col col-2">2</div>
+    </div>
+    <div class="row row-4">Row</div>
+    <!-- <div class="row row-5">
+      <form class="form-login">
+        <div class="form-row">
+          <label for="username">Username: </label>
+          <input type="text" id="username" class="form-field username" />
+        </div>
+        <div class="form-row">
+          <label for="password">Password: </label>
+          <input type="password" id="password" class="form-field password" />
+        </div>
+        <div class="form-row">
+          <input type="submit" class="form-btn submit" />
+        </div>
+      </form>
+    </div>-->
     <script>
-      const API_CLIENT = {
-        doLogin(user) {
-          console.log("User logged in successfully... ", user);
-        },
-      };
       const body = document.querySelector("body");
-      const userElm = document.querySelector(".username");
-      const pswdElm = document.querySelector(".password");
+      const row3 = document.querySelector(".row-3");
+      const row3col2 = document.querySelector(".row-3 .col-2");
 
-      const formLogin = document.querySelector(".form-login");
+      const listener1 = (e) => console.log(1);
+      const listener2 = (e) => console.log(2);
+      const listener3 = (e) => console.log(3);
 
-      const btn = document.querySelector(".form-btn.submit");
+      //
 
-      const onSubmit = (e) => {
-        API_CLIENT.doLogin({
-          username: username.value,
-          password: password.value,
-        });
-      };
-
-      const onChange = (e) => {
-        if (/^[a-zA-Z0-9]+$/.test(e.target.value)) {
-          console.log("onChange =-----> ", e.target.value);
-        }
-      };
-
-      // bubble - pre/stop - -1, -2, -3(10)- 100%
-
-      btn.addEventListener("click", onSubmit);
-      formLogin.addEventListener("input", onChange);
-      // userElm.addEventListener("input", onChange);
-      // pswdElm.addEventListener("input", onChange);
-      // formLogin.addEventListener("click", onSubmit);
-      // body.addEventListener("click", onSubmit);
+      body.addEventListener("click", listener1, false);
+      row3.addEventListener("click", listener2, true);
+      row3col2.addEventListener("click", listener3, true);
     </script>
   </body>
 </html>

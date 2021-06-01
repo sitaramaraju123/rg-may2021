@@ -1,6 +1,6 @@
 class Person {
-  constructor(name) {
-    this.name = name;
+  constructor() {
+    this._name = "";
     this._age = 0;
   }
 
@@ -12,10 +12,22 @@ class Person {
     this._age = v;
   }
 
+  get name() {
+    return this._name;
+  }
+
+  set name(v) {
+    this._name = v;
+  }
+
   print() {
     console.log(this.name + " is " + this._age + " years old.");
   }
 }
+
+Person.prototype.get = () => {};
+Person.prototype.set = (s) => {};
+
 // Student <- Person <-   <- null
 class Student extends Person {
   constructor(name, age, id) {
@@ -41,6 +53,8 @@ class Student extends Person {
 
 //
 const will = new Student("Will", 45, 1);
+will.age;
+will.name;
 console.log(
   " =-----> ",
   Object.getPrototypeOf(
